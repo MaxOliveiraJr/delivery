@@ -1,3 +1,4 @@
+import { Banner } from "../../components/Banner";
 import { SearchInput } from "../../components/SearchInput";
 import styles from "../../styles/Home.module.css";
 
@@ -26,6 +27,7 @@ const Home = () => {
           <SearchInput mainColor="#fb9400" onSearch={handleSearch} />
         </div>
       </header>
+      <Banner />
     </div>
   );
 };
