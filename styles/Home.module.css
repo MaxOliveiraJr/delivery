@@ -8,16 +8,13 @@
 }
 
 .headerTop {
-
   display: flex;
   justify-content: space-between;
   margin-bottom: 27px;
-  
 }
 
 .headerTopLeft {
 }
-
 
 .headerTitle {
   font-weight: 500;
@@ -51,3 +48,12 @@
   height: 2px;
   background-color: #fb9400;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-inline: 24px;
+}
+
+.grid div{}

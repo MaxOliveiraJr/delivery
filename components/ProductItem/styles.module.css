@@ -1,0 +1,45 @@
+.container {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  box-shadow: 0px 24px 40px #00000029;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.head {
+  height: 90px;
+}
+
+.info {
+  padding: 13px;
+  background-color: #ffffff;
+}
+
+.info .img {
+  text-align: center;
+  margin-top: -90px;
+}
+
+.info .img img {
+  width: 80%;
+  height: auto;
+}
+
+.info .categoryName {
+  font-weight: 500;
+  font-size: 8px;
+  color: #1b1b1b;
+  margin-bottom: 5px;
+}
+
+.info .name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1b1b1b;
+  margin-bottom: 5px;
+}
+
+.info .price {
+  font-weight: 600;
+  font-size: 15px;
+}
