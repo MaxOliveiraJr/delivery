@@ -5,8 +5,8 @@ export type getTanantResponse = {
 };
 
 export const useApi = () => ({
-  getTanant: (tanantSlug: string): boolean | getTanantResponse => {
-    switch (tanantSlug) {
+  getTenant: (tenantSlug: string): boolean | getTanantResponse => {
+    switch (tenantSlug) {
       case "b7burguer":
         return {
           name: "B7Burguer",
