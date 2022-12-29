@@ -1,11 +1,11 @@
-export type getTanantResponse = {
+export type getTenantResponse = {
   name: string;
   mainColor: string;
   secodColor: string;
 };
 
 export const useApi = () => ({
-  getTenant: (tenantSlug: string): boolean | getTanantResponse => {
+  getTenant: (tenantSlug: string): boolean | getTenantResponse => {
     switch (tenantSlug) {
       case "b7burguer":
         return {

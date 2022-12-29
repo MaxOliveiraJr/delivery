@@ -2,10 +2,10 @@ import { GetServerSideProps } from "next";
 import { Banner } from "../../components/Banner";
 import { ProductItem } from "../../components/ProductItem";
 import { SearchInput } from "../../components/SearchInput";
-import { useApi } from "../../libs/useApi";
+import { getTenantResponse, useApi } from "../../libs/useApi";
 import styles from "../../styles/Home.module.css";
 
-const Home = () => {
+const Home = (data: Props) => {
   const handleSearch = (searchValue: string) => {
     console.log("Você está buscando " + searchValue);
   };
@@ -20,14 +20,26 @@ const Home = () => {
           </div>
           <div className={styles.headerTopRight}>
             <div className={styles.menuButton}>
-              <div className={styles.menuButtonLine}></div>
-              <div className={styles.menuButtonLine}></div>
-              <div className={styles.menuButtonLine}></div>
+              <div
+                className={styles.menuButtonLine}
+                style={{ backgroundColor: data.tenant.mainColor }}
+              ></div>
+              <div
+                className={styles.menuButtonLine}
+                style={{ backgroundColor: data.tenant.mainColor }}
+              ></div>
+              <div
+                className={styles.menuButtonLine}
+                style={{ backgroundColor: data.tenant.mainColor }}
+              ></div>
             </div>
           </div>
         </div>
         <div className={styles.headerBottom}>
-          <SearchInput mainColor="#fb9400" onSearch={handleSearch} />
+          <SearchInput
+            mainColor={data.tenant.mainColor}
+            onSearch={handleSearch}
+          />
         </div>
       </header>
       <Banner />
@@ -37,44 +49,44 @@ const Home = () => {
             id: 1,
             image: "temp/Card-burger-1.png",
             categoryName: "Tradicional",
-            name: "Texas Burguer",
+            name: data.tenant.name,
             price: "25,99",
           }}
-          mainColor="#fb9400"
-          secondColor="#fff9f2"
+          mainColor={data.tenant.mainColor}
+          secondColor={data.tenant.secodColor}
         />
         <ProductItem
           data={{
             id: 2,
             image: "temp/Card-burger-1.png",
             categoryName: "Tradicional",
-            name: "Texas Burguer",
+            name: data.tenant.name,
             price: "25,99",
           }}
-          mainColor="#fb9400"
-          secondColor="#fff9f2"
+          mainColor={data.tenant.mainColor}
+          secondColor={data.tenant.secodColor}
         />
         <ProductItem
           data={{
             id: 3,
             image: "temp/Card-burger-1.png",
             categoryName: "Tradicional",
-            name: "Texas Burguer",
+            name: data.tenant.name,
             price: "25,99",
           }}
-          mainColor="#fb9400"
-          secondColor="#fff9f2"
+          mainColor={data.tenant.mainColor}
+          secondColor={data.tenant.secodColor}
         />
         <ProductItem
           data={{
             id: 4,
             image: "temp/Card-burger-1.png",
             categoryName: "Tradicional",
-            name: "Texas Burguer",
+            name: data.tenant.name,
             price: "25,99",
           }}
-          mainColor="#fb9400"
-          secondColor="#fff9f2"
+          mainColor={data.tenant.mainColor}
+          secondColor={data.tenant.secodColor}
         />
       </div>
     </div>
@@ -82,6 +94,10 @@ const Home = () => {
 };
 
 export default Home;
+
+type Props = {
+  tenant: getTenantResponse;
+};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { tenant: tenantSlug } = context.query;
